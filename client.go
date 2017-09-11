@@ -31,7 +31,7 @@ func main() {
 	signal.Notify(interrupt, os.Interrupt)
 
 	addr := fmt.Sprintf("%s:%s", *host, *port)
-	u := url.URL{Scheme: "ws", Host: addr, Path: "/echo"}
+	u := url.URL{Scheme: "ws", Host: addr, Path: ""}
 	log.Printf("connecting to %s", u.String())
 
 	c, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
